@@ -1,8 +1,12 @@
 name: React Project Artifact
 on:
-    push:
-        branches:
-            - main
+    schedule:
+      - cron: "*/5 * * * *" # execute after every 5 minutes
+
+    workflow_dispatch: # execute your job manually from Github
+    # push:
+    #     branches:
+    #         - main
 jobs:
     build:
         runs-on: ubuntu-latest
